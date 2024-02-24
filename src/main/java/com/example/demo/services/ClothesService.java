@@ -56,4 +56,18 @@ public class ClothesService implements ClothesServiceInterface {
     public List<Clothes> getBySize(String size) {
         return repo.findBySize(size);
     }
+
+    @Override
+    public Clothes updateClothes(int id, Clothes clothes) {
+        Clothes existedClothes = repo.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND)); // 404
+        // extracting clothes by id and changing its properties
+        existedClothes.setBrand(clothes.getBrand());
+        existedClothes.setModel(clothes.getModel());
+        existedClothes.setType(clothes.getType());
+        existedClothes.setColor(clothes.getColor());
+        existedClothes.setSize(clothes.getSize());
+        existedClothes.setPrice(clothes.getPrice());
+        // save clothes with new properties
+        return repo.save(existedClothes);
+    }
 }

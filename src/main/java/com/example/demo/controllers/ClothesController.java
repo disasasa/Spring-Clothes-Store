@@ -63,4 +63,10 @@ public class ClothesController {
     public List<Clothes> getBySize(@PathVariable("size") String size) {
         return service.getBySize(size);
     }
+
+    @PutMapping({"/update/{clothes_id}","/update/{clothes_id}/"})
+    public Clothes updateClothes(@PathVariable("clothes_id") int id, @RequestBody Clothes clothes) {
+        return service.updateClothes(id,clothes);
+    }
+
 }
