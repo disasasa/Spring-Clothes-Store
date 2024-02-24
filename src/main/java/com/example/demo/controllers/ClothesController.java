@@ -32,4 +32,15 @@ public class ClothesController {
         }
         return new ResponseEntity<>(clothes,HttpStatus.CREATED); // 201
     }
+
+    @GetMapping({"/{clothes_id}","/{clothes_id}/"})
+    public ResponseEntity<Clothes> getById(@PathVariable("clothes_id") int id) {
+        Clothes student = service.getById(id);
+        return new ResponseEntity<>(student,HttpStatus.OK); // 200
+    }
+
+    @GetMapping({"/brand/{brand}","/brand/{brand}/"})
+    public List<Clothes> getByBrand(@PathVariable("brand") String brand ) {
+        return service.getByBrand(brand);
+    }
 }

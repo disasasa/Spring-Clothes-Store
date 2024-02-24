@@ -3,7 +3,9 @@ package com.example.demo.services;
 import com.example.demo.models.Clothes;
 import com.example.demo.repository.ClothesRepositoryInterface;
 import com.example.demo.services.interfaces.ClothesServiceInterface;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -24,5 +26,14 @@ public class ClothesService implements ClothesServiceInterface {
     @Override
     public Clothes create(Clothes clothes) {
         return repo.save(clothes);
+    }
+
+    @Override
+    public Clothes getById(int id) {
+        return repo.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+    }
+
+    public List<Clothes> getByBrand(String brand) {
+        return repo.findByBrand(brand);
     }
 }
