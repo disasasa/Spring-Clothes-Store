@@ -43,4 +43,24 @@ public class ClothesController {
     public List<Clothes> getByBrand(@PathVariable("brand") String brand ) {
         return service.getByBrand(brand);
     }
+
+    @GetMapping({"/model/{model}","/model/{model}/"})
+    public List<Clothes> getByModel(@PathVariable("model") String model) {
+        return service.getByModel(model);
+    }
+
+    @GetMapping({"/type/{type}","/type/{type}/"})
+    public List<Clothes> getByType(@PathVariable("type") String type) {
+        return service.getByType(type);
+    }
+
+    @GetMapping({"/color/{color}","/color/{color}/"})
+    public List<Clothes> getByColor(@PathVariable("color") String color) {
+        return service.getByColor(color);
+    }
+
+    @GetMapping({"/size/{size}","/size/{size}/"})
+    public List<Clothes> getBySize(@PathVariable("size") String size) {
+        return service.getBySize(size);
+    }
 }

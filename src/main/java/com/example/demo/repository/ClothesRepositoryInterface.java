@@ -7,4 +7,8 @@ import java.util.List;
 
 public interface ClothesRepositoryInterface extends JpaRepository<Clothes, Integer> {
     List<Clothes> findByBrand(String brand);
+    List<Clothes> findByModel(String model);
+    List<Clothes> findByType(String type);
+    List<Clothes> findByColor(String color);
+    List<Clothes> findBySize(String size);
 }

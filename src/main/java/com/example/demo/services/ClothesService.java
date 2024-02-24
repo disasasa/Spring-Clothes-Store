@@ -36,4 +36,24 @@ public class ClothesService implements ClothesServiceInterface {
     public List<Clothes> getByBrand(String brand) {
         return repo.findByBrand(brand);
     }
+
+    @Override
+    public List<Clothes> getByModel(String model) {
+        return repo.findByModel(model);
+    }
+
+    @Override
+    public List<Clothes> getByType(String type) {
+        return repo.findByType(type);
+    }
+
+    @Override
+    public List<Clothes> getByColor(String color) {
+        return repo.findByColor(color);
+    }
+
+    @Override
+    public List<Clothes> getBySize(String size) {
+        return repo.findBySize(size);
+    }
 }
