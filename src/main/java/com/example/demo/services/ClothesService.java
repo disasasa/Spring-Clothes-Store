@@ -21,4 +21,8 @@ public class ClothesService implements ClothesServiceInterface {
         return repo.findAll();
     }
 
+    @Override
+    public Clothes create(Clothes clothes) {
+        return repo.save(clothes);
+    }
 }

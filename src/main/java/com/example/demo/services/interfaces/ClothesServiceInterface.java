@@ -5,4 +5,6 @@ import java.util.List;
 
 public interface ClothesServiceInterface  {
     List<Clothes> getAll(); // get all clothes
+    Clothes create(Clothes clothes); // create new clothes
+
 }

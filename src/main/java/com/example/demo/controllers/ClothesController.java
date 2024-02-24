@@ -23,4 +23,13 @@ public class ClothesController {
     public List<Clothes> getAll() {
         return service.getAll();
     }
+
+    @PostMapping({"/create","/create/"})
+    public ResponseEntity<Clothes> createClothes(@RequestBody Clothes clothes) {
+        Clothes createdClothes = service.create(clothes);
+        if(createdClothes == null) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR); // 500
+        }
+        return new ResponseEntity<>(clothes,HttpStatus.CREATED); // 201
+    }
 }
