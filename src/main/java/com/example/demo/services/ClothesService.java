@@ -30,7 +30,8 @@ public class ClothesService implements ClothesServiceInterface {
 
     @Override
     public Clothes getById(int id) {
-        return repo.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        // return clothes by id, otherwise throw 404 error
+        return repo.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND)); // 404
     }
 
     public List<Clothes> getByBrand(String brand) {
@@ -73,7 +74,9 @@ public class ClothesService implements ClothesServiceInterface {
 
     @Override
     public void deleteClothes(int id) {
+        // first check if the clothes exist
         repo.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND)); // 404
+        // then delete it
         repo.deleteById(id);
     }
 

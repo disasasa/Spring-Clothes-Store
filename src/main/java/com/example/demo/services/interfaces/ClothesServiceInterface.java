@@ -14,5 +14,5 @@ public interface ClothesServiceInterface  {
     List<Clothes> getBySize(String size); // return clothes by size
     Clothes updateClothes(int id, Clothes clothes); // update clothes by id
     void deleteClothes(int id); // delete clothes
-    List<Clothes> getPriceDiapason(int lowerPrice, int higherPrice);
+    List<Clothes> getPriceDiapason(int lowerPrice, int higherPrice); // return clothes by price diapason
 }
