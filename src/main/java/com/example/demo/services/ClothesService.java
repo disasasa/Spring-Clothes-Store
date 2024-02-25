@@ -76,4 +76,9 @@ public class ClothesService implements ClothesServiceInterface {
         repo.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND)); // 404
         repo.deleteById(id);
     }
+
+    @Override
+    public List<Clothes> getPriceDiapason(int lowerPrice, int higherPrice) {
+        return repo.findClothesByPriceAfterAndPriceBefore(lowerPrice,higherPrice);
+    }
 }

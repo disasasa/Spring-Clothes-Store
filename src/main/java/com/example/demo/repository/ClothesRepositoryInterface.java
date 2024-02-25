@@ -11,4 +11,5 @@ public interface ClothesRepositoryInterface extends JpaRepository<Clothes, Integ
     List<Clothes> findByType(String type);
     List<Clothes> findByColor(String color);
     List<Clothes> findBySize(String size);
+    List<Clothes> findClothesByPriceAfterAndPriceBefore(int lowerPrice, int higherPrice);
 }

@@ -73,4 +73,9 @@ public class ClothesController {
     public void deleteClothes(@PathVariable("clothes_id") int id) {
         service.deleteClothes(id);
     }
+
+    @GetMapping({"/price/{lower}/{higher}","/price/{lower}/{higher}/"})
+    public List<Clothes> getClothesByPriceDiapason(@PathVariable("lower") int lowerPrice, @PathVariable("higher") int higherPrice) {
+        return service.getPriceDiapason(lowerPrice, higherPrice);
+    }
 }
