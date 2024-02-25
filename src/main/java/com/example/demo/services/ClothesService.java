@@ -70,4 +70,10 @@ public class ClothesService implements ClothesServiceInterface {
         // save clothes with new properties
         return repo.save(existedClothes);
     }
+
+    @Override
+    public void deleteClothes(int id) {
+        repo.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND)); // 404
+        repo.deleteById(id);
+    }
 }

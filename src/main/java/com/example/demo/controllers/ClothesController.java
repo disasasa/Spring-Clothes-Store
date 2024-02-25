@@ -69,4 +69,8 @@ public class ClothesController {
         return service.updateClothes(id,clothes);
     }
 
+    @DeleteMapping({"/delete/{clothes_id}","/delete/{clothes_id}/"})
+    public void deleteClothes(@PathVariable("clothes_id") int id) {
+        service.deleteClothes(id);
+    }
 }

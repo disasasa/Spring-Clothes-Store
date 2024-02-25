@@ -13,4 +13,5 @@ public interface ClothesServiceInterface  {
     List<Clothes> getByColor(String color); // return clothes by color
     List<Clothes> getBySize(String size); // return clothes by size
     Clothes updateClothes(int id, Clothes clothes); // update clothes by id
+    void deleteClothes(int id); // delete clothes
 }
