@@ -3,6 +3,7 @@ package com.example.demo.services;
 import com.example.demo.models.Clothes;
 import com.example.demo.repository.ClothesRepositoryInterface;
 import com.example.demo.services.interfaces.ClothesServiceInterface;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -20,7 +21,7 @@ public class ClothesService implements ClothesServiceInterface {
 
     @Override
     public List<Clothes> getAll() {
-        return repo.findAll();
+        return repo.findAll(Sort.by(Sort.Order.asc("id")));
     }
 
     @Override
