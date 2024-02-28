@@ -69,6 +69,7 @@ public class ClothesService implements ClothesServiceInterface {
         existedClothes.setColor(clothes.getColor());
         existedClothes.setSize(clothes.getSize());
         existedClothes.setPrice(clothes.getPrice());
+        existedClothes.setAmount(clothes.getAmount());
         // save clothes with new properties
         return repo.save(existedClothes);
     }

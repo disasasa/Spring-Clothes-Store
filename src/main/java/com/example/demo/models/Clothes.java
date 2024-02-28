@@ -15,5 +15,6 @@ public class Clothes {
     private String type;
     private String color;
     private String size;
+    private int amount;
     private int price;
 }
