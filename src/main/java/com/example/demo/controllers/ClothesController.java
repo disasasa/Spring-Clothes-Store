@@ -5,6 +5,7 @@ import com.example.demo.services.interfaces.ClothesServiceInterface;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import com.example.demo.models.Order;
 
 import java.util.List;
 
@@ -76,4 +77,5 @@ public class ClothesController {
     public List<Clothes> getClothesByPriceDiapason(@PathVariable("lower") int lowerPrice, @PathVariable("higher") int higherPrice) {
         return service.getPriceDiapason(lowerPrice, higherPrice);
     }
+
 }
